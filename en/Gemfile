@@ -1,6 +1,14 @@
-# If you have OpenSSL installed, we recommend updating
-# the following line to use "https"
-# source 'http://rubygems.org'
 source 'http://ruby.taobao.org/'
 
-gem "middleman", "~>3.0.13"
+gem "middleman", "~> 3.1.0"
+gem "middleman-blog", "~> 3.2.0"
+gem "middleman-syntax"
+gem "middleman-deploy"
+gem "middleman-smusher"
+
+gem "builder", "~> 3.0.0"
+gem "zurb-foundation" , '~> 4.2.2', require: false
+gem "forgery"
+gem "sitemap_generator"
+gem "tzinfo"
+gem "nokogiri"
