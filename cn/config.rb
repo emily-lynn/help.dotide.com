@@ -1,3 +1,38 @@
+require 'kramdown'
+require 'extensions/sitemap.rb'
+require 'zurb-foundation'
+require "middleman-smusher"
+
+activate :sprockets
+
+# Unfortunately ZURB puts its assets in unconventional paths, so we need to
+# manually add these paths for sprockets to find them. However, the following
+# only works within the middleman server but there doesn't seem to be any
+# way to get sprockets to export the vendored assets within the foundation
+# gem to the build directory because of the non-standard naming of the directories.
+# Keeping this here for reference though.
+#Gem.loaded_specs.values.map(&:full_gem_path).each do |root_path|
+#  ["js", "scss"].map {|p| File.join(root_path, p) }.select {|p| File.directory?(p) }.each {|p| sprockets.append_path(p)}
+#end
+
+###
+## Blog settings
+####
+
+Time.zone = "Asia/Shanghai"
+
+activate :blog do |blog|
+  blog.prefix = "/cn"
+  blog.permalink = "articles/:title.html"
+  blog.sources = "articles/:title.html"
+  blog.taglink = "categories/:tag.html"
+  blog.layout = "article"
+  blog.summary_separator = /(READMORE)/
+  blog.summary_length = 250
+  blog.default_extension = ".md"
+  blog.tag_template = "/cn/tag.html"
+end
+
 ###
 # Compass
 ###
@@ -15,11 +50,8 @@
 # Page options, layouts, aliases and proxies
 ###
 
-# Per-page layout changes:
-#
 # With no layout
-# page "/path/to/file.html", :layout => false
-#
+
 # With alternative layout
 # page "/path/to/file.html", :layout => :otherlayout
 #
@@ -47,24 +79,34 @@
 #   end
 # end
 
+# Generate sitemap after build
+activate :sitemap_generator
+
 set :css_dir, 'stylesheets'
-
 set :js_dir, 'javascripts'
-
 set :images_dir, 'images'
+
+###
+# Syntax
+###
+activate :syntax
+
+###
+# Deploy
+###
+activate :deploy do |deploy|
+  deploy.method   = :ftp
+  deploy.host     = "v0.ftp.upyun.com"
+  deploy.user     = 'cms-admin/dotide-help'
+  deploy.password = ENV['password']
+  deploy.path     = "/"
+  deploy.build_before = true
+end
 
 # Build-specific configuration
 configure :build do
-  ignore 'images/*.psd'
-  ignore 'stylesheets/lib/*'
-  ignore 'stylesheets/vendor/*'
-  ignore 'javascripts/lib/*'
-  ignore 'javascripts/vendor/*'
 
-  # For example, change the Compass output style for deployment
   activate :minify_css
-
-  # Minify Javascript on build
   activate :minify_javascript
 
   # Enable cache buster
@@ -75,8 +117,7 @@ configure :build do
 
   # Compress PNGs after build
   # First: gem install middleman-smusher
-  # require "middleman-smusher"
-  # activate :smusher
+  activate :smusher
 
   # Or use a different image path
   # set :http_path, "/Content/images/"

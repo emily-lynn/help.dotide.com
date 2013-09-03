@@ -1,50 +1,47 @@
-# Middleman Template with Haml, Sass & Coffeescript
+# middleman-zurb-template
 
-**middleman-hamlsasscoffee** is a [Middleman 3.x](http://middlemanapp.com/) project template with [Compass](http://compass-style.org)/[SASS](http://sass-lang.com/), [HAML](http://haml-lang.com/) and [Coffeescript](http://coffeescript.org). As with all Middleman templates, using [Bundler](http://gembundler.com/) and [Rbenv](https://github.com/sstephenson/rbenv/) is recommended.
+This is a [template](http://middlemanapp.com/getting-started/#toc_6) for the excellent [Middleman](http://middlemanapp.com/) static site generator that incorporates 
+[ZURB Foundation 4](http://foundation.zurb.com) and reasonable defaults for building out a blog. As with all Middleman templates, using [Bundler](http://gembundler.com/) 
+and [rbenv](https://github.com/sstephenson/rbenv/) is recommended.
 
-###Features###
-* Optimized asset structure
-* Conditional IE html tags
-* Viewport meta setup for iOS and Android
-* Favicon and app icons
-* Dynamic title attribute body class via YAML front-matter
+## Features
 
-###Includes###
-* Modernizr 2.6.2 via cdnjs.com
-* jQuery 2.0.3 via cdnjs.com
-* Google Analytics (async)
+* [middleman-blog 3.2](https://github.com/middleman/middleman-blog)
+* [Zurb Foundation 4.2](http://foundation.zurb.com/)
+* [Font Awesome 3.2](http://fortawesome.github.com/Font-Awesome)
+* Many elements and defaults from [HTML5 Boilerplate](http://html5boilerplate.com/)
+* A warning overlay presented to older IE browsers (< IE9)
+* [Google Analytics](http://www.google.com/analytics/) integration
+* [Disqus](http://disqus.com/) integration
+* Automatic XML Sitemap creation on build
+* A sensible mobile-first starter layout for a blog. You will most likely want to make numerous changes to the styling - I didn't make any assumptions about the design. Don't judge it on its looks, this isn't a blog theme, it is meant to be a foundation to build on.
 
-### Installation ###
- 
-Clone **middleman-hamlsasscoffee** into `~/.middleman`. You will need to create this directory if it doesn't exist.
-```$ git clone git://github.com/pixelsonly/middleman-hamlsasscoffee.git ~/.middleman/middleman-hamlsasscoffee```
+## Installation
 
-Initialize middleman on a new or existing folder `$ middleman init path_to_project --template=middleman-hamlsasscoffee`
+Clone into `~/.middleman` (you'll have to create it if it doesn't exist). You can then use it with the `--template` flag on `middleman init`.
 
+1. `mkdir -p ~/.middleman`
+2. `git clone git://github.com/mattolson/middleman-zurb-template.git ~/.middleman/zurb-foundation`
+3. `middleman init my_new_project --template=zurb-foundation`
+4. `cd my_new_project && bundle install`
+5. `middleman server`
 
-For more help follow [Middleman's project template instructions](http://middlemanapp.com/getting-started/welcome/) or feel free to hit me up on [Twitter](http://twitter.com/pixelsonly).
+For more help follow [Middleman's project template instructions](http://middlemanapp.com/getting-started/) or feel to ask me on [Twitter](http://twitter.com/ahbiscuits).
 
----
+## Removing blog functionality
 
-##### LICENSE #####
+This template is still a good starting point for sites that don't require blogging functions. To remove blog-specific stuff:
 
-Copyright (c) 2013 Ryan Lindsey
+1. `git rm source/blog/*`
+2. `git rm source/layouts/article.erb`
+3. Remove middleman-blog from Gemfile.
+4. Remove blog-related styles from source/stylesheets/base.css.scss. They are all at the bottom of the file grouped together under the header "Blog Articles".
+5. Remove blog-related settings from config.rb. They are all grouped at the top under the header "Blog Settings".
+6. Update the home page (source/index.html.erb) to do something more relevant to your site.
 
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-"Software"), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
+## Examples
 
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
+Two sites that I know of that use this template as a starting point (if there are more, let me know!):
+* My blog: [Matt Olson](http://mattolson.com)
+* My company's site: [Ruby Cloud](http://rubycloud.com)
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
-LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
-WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
