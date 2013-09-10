@@ -13,10 +13,13 @@
       }
     }
   }
-  .category-list{
-    li a{
-      background: transparent image-url('li-chevron.png') 0 5px no-repeat;
-      padding-left: 10px;
+}
+.category-list{
+  li a{
+    background: transparent image-url('li-chevron.png') 0 5px no-repeat;
+    padding-left: 10px;
+    &:hover{
+      text-decoration: underline;
     }
   }
 }
