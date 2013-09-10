@@ -1,0 +1,5 @@
+.articles.small-12.large-8.columns.large-offset-2
+  %h4= tagname
+  %ul.category-list.no-bullet
+    - articles.each do |article|
+      %li.article= link_to article.title, article

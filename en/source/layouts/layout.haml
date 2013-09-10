@@ -17,7 +17,7 @@
   %meta{:content => "black-translucent", :name => "apple-mobile-web-app-status-bar-style"}/
   %meta{:content => "on", "http-equiv" => "cleartype"}/
   %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
-  %title= data.page.title || "Dotide帮助"
+  %title= data.page.title || "Dotide Help"
   %link{:href => "//netdna.bootstrapcdn.com/font-awesome/3.2.0/css/font-awesome.min.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
   = stylesheet_link_tag "application"
   = yield_content :stylesheets
@@ -32,19 +32,19 @@
     %ul.title-area
       %li.name
         %h1
-          - link_to '/cn/' do
+          - link_to '/en/' do
             = image_tag('logo.png')
-            Dotide帮助
+            Dotide help
     %section.top-bar-section
       %ul
         %li.divider
-        %li= link_to '联系我们', '/cn/articles/contactus.html'
+        %li= link_to 'Contact Us', '/en/articles/contactus.html'
       %ul
         %li.divider
-        %li= link_to '本站源代码', 'https://github.com/dotide/help.dotide.com'
+        %li= link_to 'Source Code', 'https://github.com/dotide/help.dotide.com'
       %ul.right
         %li.divider
-        %li= link_to '返回Dotide', 'http://dotide.com/'
+        %li= link_to 'Return to Dotide', 'http://dotide.com/'
 
   / Main page container
   .row
@@ -58,44 +58,44 @@
     .small-12.large-6.columns
       %p.right
         %i.icon-heart
-        = link_to '托管于又拍云', 'https://www.upyun.com/?md=geakit'
+        = link_to 'hosted on Upyun.', 'https://www.upyun.com/?md=geakit'
   /[if lt IE 9]
     <div id="ie-warning-overlay">
     <div id="ie-warning">
-    <h1>您还在使用化石时代的IE浏览器吗？</h1>
+    <h1>Did you know that your copy of Internet Explorer is terribly out of date?</h1>
     <p>
-    为了获得最好的上网体验，我们建议您升级您的IE浏览器或者使用其他浏览器。
-    您可以安装如下任何一款浏览器，来获得更佳的上网体验。
+    To get the best possible experience using our website, we recommend that you upgrade to the latest version or use another web browser.
+    Any of the following will provide a superior experience, not only on this site, but across the web.
     </p>
-    <p>点击以下任何一个图标，即可跳转到相应的下载页面.</p>
+    <p>Just click one of the icons below to get to the download page.</p>
     <ul>
     <li>
     <a href="http://microsoft.com/ie">
-    <haml:loud> image_tag &amp;#39;browser_ie.png&amp;#39;, :alt =&amp;gt; &amp;quot;下载 Internet Explorer&amp;quot; </haml:loud>
+    <haml:loud> image_tag 'browser_ie.png', :alt =&amp;gt; &amp;quot;Download Internet Explorer&amp;quot; </haml:loud>
     <p>Internet Explorer 9+</p>
     </a>
     </li>
     <li>
     <a href="http://mozilla.org/firefox">
-    <haml:loud> image_tag &amp;#39;browser_firefox.png&amp;#39;, :alt =&amp;gt; &amp;quot;下载 Firefox&amp;quot; </haml:loud>
+    <haml:loud> image_tag 'browser_firefox.png', :alt =&amp;gt; &amp;quot;Download Firefox&amp;quot; </haml:loud>
     <p>Firefox</p>
     </a>
     </li>
     <li>
     <a href="http://google.com/chrome">
-    <haml:loud> image_tag &amp;#39;browser_chrome.png&amp;#39;, :alt =&amp;gt; &amp;quot;下载 Chrome&amp;quot; </haml:loud>
+    <haml:loud> image_tag 'browser_chrome.png', :alt =&amp;gt; &amp;quot;Download Chrome&amp;quot; </haml:loud>
     <p>Google Chrome</p>
     </a>
     </li>
     <li>
     <a href="http://apple.com/safari">
-    <haml:loud> image_tag &amp;#39;browser_safari.png&amp;#39;, :alt =&amp;gt; &amp;quot;下载 Safari&amp;quot; </haml:loud>
+    <haml:loud> image_tag 'browser_safari.png', :alt =&amp;gt; &amp;quot;Download Safari&amp;quot; </haml:loud>
     <p>Safari</p>
     </a>
     </li>
     <li>
     <a href="http://opera.com">
-    <haml:loud> image_tag &amp;#39;browser_opera.png&amp;#39;, :alt =&amp;gt; &amp;quot;下载 Opera&amp;quot; </haml:loud>
+    <haml:loud> image_tag 'browser_opera.png', :alt =&amp;gt; &amp;quot;Download Opera&amp;quot; </haml:loud>
     <p>Opera</p>
     </a>
     </li>

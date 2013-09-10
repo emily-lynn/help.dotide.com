@@ -1,0 +1,25 @@
+.categories{
+  h4{
+    padding-bottom: 5px;
+    margin: 15px 0 10px;
+    border-bottom: 1px solid #ddd;
+    a{
+      color: #137795;
+      &:hover {
+        text-decoration: underline;
+      }
+      &:visited {
+        color: #119cbb;
+      }
+    }
+  }
+}
+.category-list{
+  li a{
+    background: transparent image-url('li-chevron.png') 0 5px no-repeat;
+    padding-left: 10px;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
