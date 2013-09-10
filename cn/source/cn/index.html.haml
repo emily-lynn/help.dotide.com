@@ -1,0 +1,10 @@
+- content_for :head do
+  %link{:href => "/cn/feed.xml", :rel => "alternate", :type => "application/atom+xml"}/
+.articles.small-12.large-8.columns.large-offset-2
+  %ul#categories
+    - blog.tags.each do |tag, articles|
+      %li.category
+        %h5= link_to tag, tag_path(tag)
+        %ul.category-list
+          - articles.each do |article|
+            %li.article= link_to article.title, article
