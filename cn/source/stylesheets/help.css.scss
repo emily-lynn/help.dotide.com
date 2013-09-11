@@ -8,9 +8,6 @@
       &:hover {
         text-decoration: underline;
       }
-      &:visited {
-        color: #119cbb;
-      }
     }
   }
 }
@@ -20,6 +17,9 @@
     padding-left: 10px;
     &:hover{
       text-decoration: underline;
+    }
+    &:visited {
+      color: #119cbb;
     }
   }
 }
