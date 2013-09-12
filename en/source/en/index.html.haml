@@ -1,5 +1,9 @@
+- content_for :title do
+  = "Dotide Help"
+
 - content_for :head do
   %link{:href => "/en/feed.xml", :rel => "alternate", :type => "application/atom+xml"}/
+
 .articles.small-12.large-8.columns.large-offset-2
   %ul.categories.no-bullet
     - blog.tags.each do |tag, articles|
